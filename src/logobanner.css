@@ -1,0 +1,30 @@
+  @keyframes scroll-logos {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll-logos {
+    animation: scroll-logos 15s linear infinite;
+    display: flex;
+    white-space: nowrap;
+  }
+
+
+  @media (max-width: 767px) {
+    @keyframes scroll-logos-mobile {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    
+    .animate-scroll-logos {
+      animation: scroll-logos-mobile 15s linear infinite;
+    }
+  }
