@@ -1594,6 +1594,16 @@
       "image": "/images/bedroom/bedroom24.png",
       "review": "4.8",
       "quantities": 2
+    },
+    {
+      "id": "2",
+      "title": "Koala Plus Mattress",
+      "size": "Queen",
+      "price": "1050",
+      "color": "",
+      "image": "/images/bedroom/bedroom25.png",
+      "review": "4.8",
+      "quantities": 3
     }
   ],
   "quizresponses": [

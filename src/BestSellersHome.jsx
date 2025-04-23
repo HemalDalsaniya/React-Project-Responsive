@@ -1,4 +1,4 @@
-import { useState, useRef} from 'react';
+import { useState, useRef, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 const BestSellersHome = () => {
@@ -49,6 +49,16 @@ const BestSellersHome = () => {
       { id: 7, name: "Bookshelves", images: [] }
     ];
   
+     useEffect(() => {
+        const handleResize = () => {
+          setIsMobile(window.innerWidth < 768);
+        };
+    
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
+
     const currentLink = links.find((link) => link.id === LinkId);
   
     const handleLinkClick = (id) => {
@@ -125,8 +135,7 @@ const BestSellersHome = () => {
   };
   
   // Progress bar calculation
-  const progress = (currentIndex / (currentLink ? currentLink.images.length - 1 : 1)) * 100;
-  //const progress = ((currentIndex + 1 ) / currentLink.images.length) * 100;
+  const progress = (currentIndex / (currentLink ? currentLink.images.length - (isMobile ? 1 : 4) : 1)) * 100;
 
   return (
     <div className="bg-white px-4 md:px-40 pt-14 mb-12">

@@ -51,7 +51,7 @@ const Review = () => {
 
   const prevImage = () => {
     if (currentLink && currentIndex > 0) {
-      setCurrentIndex((prevIndex) => prevIndex - 1);
+      setCurrentIndex((prevIndex) => prevIndex - 1); 
     }
   };
 

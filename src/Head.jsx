@@ -219,7 +219,8 @@ const Head = () => {
                 </div> 
              
                 <div className="flex items-center float-end">
-                  <button onClick={() => window.open('/login','_blank')} >
+                  <button onClick={() =>  navigate('/login')} >
+                     {/* window.open('/login','_blank')} > */}
                     <img className="float-end cursor-pointer gap-0"
                          src={Usericon}  
                          alt="User Icon" 
@@ -271,7 +272,9 @@ const Head = () => {
     {/* Right side - Search, User and Cart */}
     <div className="flex items-center space-x-4">
       
-      <button onClick={() => window.open('/login','_blank')} className="p-2">
+      <button onClick={() => navigate('/login')}
+      //  window.open('/login','_blank')} 
+      className="p-2">
         <img src={Usericon} alt="User" className="w-6 h-6" />
       </button>
       <button onClick={() => navigate('/cart')} className="p-2">
