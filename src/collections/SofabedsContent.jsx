@@ -1,19 +1,22 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import sofabeds, {sofabedsizes, sofacolors} from '../data/sofabeds'
 
 const SofabedsContent = () => {
     const [sortOrder, setSortOrder] = useState('');
     const [isColorOpen, setIsColorOpen] = useState(true);
-    const [sofacolors, setSofacolors] = useState([]);
+    // const [sofacolors, setSofacolors] = useState([]);
     const [isSizeOpen, setIsSizeOpen] = useState(true);
-    const [sofabedsizes, setSofabedsizes] = useState([]);
+    // const [sofabedsizes, setSofabedsizes] = useState([]);
     const [isPriceOpen, setIsPriceOpen] = useState(false);
-    const [sofabeds, setSofabeds] = useState([]);
+    // const [sofabeds, setSofabeds] = useState([]);
     const [colorFilter, setColorFilter] = useState([]);
     const [sizeFilter, setSizeFilter] = useState([]);
     const [priceFilter, setPriceFilter] = useState('');
     const [isOrderOpen, setIsOrderOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
+    const navigate = useNavigate();
     const dropdownRef = useRef(null);
 
     useEffect(() => {
@@ -25,23 +28,23 @@ const SofabedsContent = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/sofacolors')
-            .then((response) => response.json())
-            .then((data) => setSofacolors(data));
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/sofacolors')
+    //         .then((response) => response.json())
+    //         .then((data) => setSofacolors(data));
+    // }, []);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/sofabedsizes')
-            .then((response) => response.json())
-            .then((data) => setSofabedsizes(data));
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/sofabedsizes')
+    //         .then((response) => response.json())
+    //         .then((data) => setSofabedsizes(data));
+    // }, []);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/sofabeds')
-            .then((response) => response.json())
-            .then((data) => setSofabeds(data));
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/sofabeds')
+    //         .then((response) => response.json())
+    //         .then((data) => setSofabeds(data));
+    // }, []);
 
     const filteredProducts = sofabeds.filter((product) => {
         return (
@@ -102,6 +105,10 @@ const SofabedsContent = () => {
       };
     
       const selectedOption = options.find(opt => opt.value === sortOrder) || options[0];
+
+      const handleProductClick = (id) => {
+        navigate(`/product/${id}`);
+    };
  
 
     return (
@@ -358,7 +365,7 @@ const SofabedsContent = () => {
                     {/* Product Grid */}
                     <div className={`${isMobile ? 'grid grid-cols-2' : 'grid grid-cols-3'} w-full justify-start gap-x-5 gap-y-8 cursor-pointer`}>
                         {sortedProducts.map((sofabed) => (
-                            <div key={sofabed.id} className="space-y-1.5">
+                            <div key={sofabed.id} className="space-y-1.5" onClick={() => handleProductClick(sofabed.id)}>
                                 <div className="rounded-xl">
                                     <img src={sofabed.image} alt="image" className="rounded-lg w-full md:h-70 h-36 aspect-square" />
                                 </div>

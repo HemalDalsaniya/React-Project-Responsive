@@ -11,6 +11,9 @@ import Calender from '/icons/Calender.png';
 import Warrenty from '/icons/Warrenty.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../redux/cartSlice';
+import sofas from '../data/sofas';
+import bedroom from '../data/bedroom';
+import sofabeds from '../data/sofabeds';
 
 const Product = () => {
     const { id } = useParams(); 
@@ -121,33 +124,49 @@ const Product = () => {
     //     fetchProduct();
     // }, [id]);
 
-    useEffect(() => {
-        const fetchProduct = async () => {
-          try {
-            // Fetch all products from both endpoints
-            const [sofasResponse, bedroomResponse, sofabedsResponse] = await Promise.all([
-              axios.get('http://localhost:3000/sofas'),
-              axios.get('http://localhost:3000/bedroom'),
-              axios.get('http://localhost:3000/sofabeds')
-            ]);
+    // useEffect(() => {
+    //     const fetchProduct = async () => {
+    //       try {
+    //         // Fetch all products from both endpoints
+    //         const [sofasResponse, bedroomResponse, sofabedsResponse] = await Promise.all([
+    //           axios.get('http://localhost:3000/sofas'),
+    //           axios.get('http://localhost:3000/bedroom'),
+    //           axios.get('http://localhost:3000/sofabeds')
+    //         ]);
       
-            // Combine both arrays and find the product with matching ID
-            const allProducts = [...sofasResponse.data, ...bedroomResponse.data, ...sofabedsResponse.data];
-            const foundProduct = allProducts.find(product => product.id === id);
+    //         // Combine both arrays and find the product with matching ID
+    //         const allProducts = [...sofasResponse.data, ...bedroomResponse.data, ...sofabedsResponse.data];
+    //         const foundProduct = allProducts.find(product => product.id === id);
       
-            if (foundProduct) {
-              setProduct(foundProduct);
-            } else {
-              throw new Error('Product not found');
-            }
-          } catch (error) {
-            setError(error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        fetchProduct();
-    },[id])
+    //         if (foundProduct) {
+    //           setProduct(foundProduct);
+    //         } else {
+    //           throw new Error('Product not found');
+    //         }
+    //       } catch (error) {
+    //         setError(error);
+    //       } finally {
+    //         setLoading(false);
+    //       }
+    //     };
+    //     fetchProduct();
+    // },[id])
+
+useEffect(() => {
+  const allProducts = [...sofas, ...bedroom, ...sofabeds];
+
+  const foundProduct = allProducts.find(
+    product => product.id === id
+  );
+
+  if (foundProduct) {
+    setProduct(foundProduct);
+  } else {
+    setError('Product not found');
+  }
+
+  setLoading(false);
+}, [id]);
     
 
     if (loading) return <div>Loading...</div>;

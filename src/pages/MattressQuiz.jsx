@@ -295,7 +295,7 @@ const MattressQuiz = () => {
       };
   
       const emailResponse = await emailjs.send(
-        'service_ujyigwm', // Replace with your EmailJS service ID
+        'service_ujyigwm', // Replace with your EmailJS service ID 
         'template_coapod4', // Replace with your EmailJS template ID
         templateParams,
         'g_iC8lfeqHJiC0Tit' // Replace with your EmailJS user ID

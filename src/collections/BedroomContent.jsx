@@ -1,13 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import bedroom, {bedroomsizes, bedroomcolors} from '../data/bedroom'
 const BedroomContent = () => {
     const [sortOrder, setSortOrder] = useState('');
     const [isColorOpen, setIsColorOpen] = useState(true);
-    const [bedroomcolors, setBedroomcolors] = useState([]);
+    // const [bedroomcolors, setBedroomcolors] = useState([]);
     const [isSizeOpen, setIsSizeOpen] = useState(true);
-    const [bedroomsizes, setBedroomsizes] = useState([]);
+    // const [bedroomsizes, setBedroomsizes] = useState([]);
     const [isPriceOpen, setIsPriceOpen] = useState(false);
-    const [bedroom, setBedroom] = useState([]);
+    // const [bedroom, setBedroom] = useState([]);
     const [colorFilter, setColorFilter] = useState([]); // Changed to array for multiple colors
     const [sizeFilter, setSizeFilter] = useState([]);
     const [priceFilter, setPriceFilter] = useState('');
@@ -27,24 +28,24 @@ const BedroomContent = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/bedroomcolors')
-            .then((response) => response.json())
-            .then((data) => setBedroomcolors(data));
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/bedroomcolors')
+    //         .then((response) => response.json())
+    //         .then((data) => setBedroomcolors(data));
             
-    }, []);  
+    // }, []);  
 
-    useEffect(() => {
-        fetch('http://localhost:5000/bedroomsizes')
-            .then((response) => response.json())
-            .then((data) => setBedroomsizes(data));
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/bedroomsizes')
+    //         .then((response) => response.json())
+    //         .then((data) => setBedroomsizes(data));
+    // }, []);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/bedroom')
-            .then((response) => response.json())
-            .then((data) => setBedroom(data));
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/bedroom')
+    //         .then((response) => response.json())
+    //         .then((data) => setBedroom(data));
+    // }, []);
 
     const cleanPrice = (price) => {
       if (typeof price === 'string') {

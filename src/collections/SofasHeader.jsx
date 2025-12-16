@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import { sofasheader } from '../data/sofas'
 
 const SofasHeader = () => {
-  const [sofasheader, setSofasheader] = useState([]);
+  // const [sofasheader, setSofasheader] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -27,15 +28,15 @@ const SofasHeader = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    axios.get('http://localhost:5000/sofasheader') 
-      .then(response => {
-        setSofasheader(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios.get('http://localhost:5000/sofasheader') 
+  //     .then(response => {
+  //       setSofasheader(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error('Error fetching data:', error);
+  //     });
+  // }, []);
 
   const handleMouseDown = (e) => {
     setStartX(e.clientX);

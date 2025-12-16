@@ -1,4 +1,4 @@
-import useEffect from 'react'
+import {useEffect} from 'react'
 import { useLocation } from 'react-router-dom'
 import Header from '../Header'
 import Head from '../Head'

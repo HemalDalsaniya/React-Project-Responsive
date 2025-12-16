@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
-import axios from 'axios'; 
+// import axios from 'axios'; 
+import whyKoala from './data/koala'
 
 const WhyKoalaHome = () => {
-    const [whyKoala, setWhyKoala] = useState([]);
+   // const [whyKoala, setWhyKoala] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [startX, setStartX] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
@@ -18,15 +19,15 @@ const WhyKoalaHome = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    useEffect(() => {
-        axios.get('http://localhost:5000/whyKoala')
-          .then(response => {
-            setWhyKoala(response.data); 
-          })
-          .catch(error => {
-            console.error('Error fetching about us data:', error);
-          });
-    }, []);  
+    // useEffect(() => {
+    //     axios.get('http://localhost:5000/whyKoala')
+    //       .then(response => {
+    //         setWhyKoala(response.data); 
+    //       })
+    //       .catch(error => {
+    //         console.error('Error fetching about us data:', error);
+    //       });
+    // }, []);  
 
     // Touch event handlers for mobile swipe
     const handleTouchStart = (e) => {
