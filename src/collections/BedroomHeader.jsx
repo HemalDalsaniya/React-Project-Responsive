@@ -95,16 +95,16 @@ const BedroomHeader = () => {
         onTouchEnd={handleTouchEnd}
       >
         <div className={`flex ${itemsToShow === 6 ? 'justify-between gap-x-15' : 'gap-x-4'}`}>
-          {bedroomheader.slice(currentIndex, currentIndex + itemsToShow).map((sofa) => (
-            <div key={sofa.id} className="flex-shrink-0" style={{ width: itemsToShow === 2 ? 'calc(50% - 0.5rem)' : 'auto' }}>
-              <a className="rounded-xl" href={`${sofa.url}`}>
+          {bedroomheader.slice(currentIndex, currentIndex + itemsToShow).map((bedroom) => (
+            <div key={bedroom.id} className="flex-shrink-0" style={{ width: itemsToShow === 2 ? 'calc(50% - 0.5rem)' : 'auto' }}>
+              <a className="rounded-xl" href={`${bedroom.url}`}>
                 <img
-                  src={sofa.image}
-                  alt={sofa.title}
+                  src={bedroom.image}
+                  alt={bedroom.title}
                   className="rounded-lg w-full md:h-40 h-36 hover:border-1 hover:border-gray-400"
                 />
               </a>
-              <p className="font-bold text-md mt-2">{sofa.title}</p>
+              <p className="font-bold text-md mt-2">{bedroom.title}</p> 
             </div>
           ))}
         </div>

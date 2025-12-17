@@ -55,7 +55,7 @@ const Head = () => {
               <div className="flex items-center w-96 justify-start cursor-pointer">
                 <li className="relative z-40">
                   <div id="logo">
-                    <img
+                    <img href="/"
                       src={Logo}  
                       alt="Logo" 
                       width="auto"
@@ -219,8 +219,7 @@ const Head = () => {
                 </div> 
              
                 <div className="flex items-center float-end">
-                  <button onClick={() =>  navigate('/login')} >
-                     {/* window.open('/login','_blank')} > */}
+                  <button onClick=  /*{() =>  navigate('/login')} */ {() => window.open('/login','_blank')} >
                     <img className="float-end cursor-pointer gap-0"
                          src={Usericon}  
                          alt="User Icon" 
@@ -272,8 +271,7 @@ const Head = () => {
     {/* Right side - Search, User and Cart */}
     <div className="flex items-center space-x-4">
       
-      <button onClick={() => navigate('/login')}
-      //  window.open('/login','_blank')} 
+      <button onClick=  /*{() => navigate('/login')} */  {() => window.open('/login','_blank')} 
       className="p-2">
         <img src={Usericon} alt="User" className="w-6 h-6" />
       </button>

@@ -1586,34 +1586,13 @@
   ],
   "cart": [
     {
-      "id": "6",
-      "title": "Balmain Bed Base",
-      "size": "Queen",
-      "price": "750",
-      "color": "Timber",
-      "image": "/images/bedroom/bedroom29.png",
-      "review": "4.8",
-      "quantities": 2
-    },
-    {
-      "id": "73",
-      "title": "Koala Sofa Bed",
-      "size": "2.5 Seater",
-      "price": "1390",
-      "color": "Green",
-      "image": "/images/sofas/sofa19.png",
+      "id": "110",
+      "title": "Byron Sofa Bed",
+      "size": "3.5 Seater",
+      "price": "2290",
+      "color": "Beige",
+      "image": "/images/sofas/sofa21.png",
       "review": "4.7",
-      "description": "The award-winning Koala Sofa Bed transforms from sofa to bed in seconds, turning any space into a comfy sleep spot. Previously known as the Cushy Sofa Bed.",
-      "quantities": 1
-    },
-    {
-      "id": "3",
-      "title": "Koala SE Mattress",
-      "size": "Queen",
-      "price": "650",
-      "color": "",
-      "image": "/images/bedroom/bedroom26.png",
-      "review": "4.8",
       "quantities": 1
     }
   ],
