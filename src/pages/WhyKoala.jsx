@@ -279,7 +279,7 @@ const WhyKoala = () => {
       <Header/>
       <Head/>
      
-     <div className="w-full bg-white">
+      <div className="w-full bg-white">
            <div>
            <div className="w-full flex relative cursor-pointer">
            <img
@@ -383,7 +383,7 @@ const WhyKoala = () => {
 
      {/* why-Koala Review  */}
       <div className="bg-white px-4 md:px-40 mb-8 md:mb-14">
-        <div className="flex flex-col md:flex-row justify-between relative">
+        <div className="flex flex-col md:flex-row justify-between relative"> 
           <div className="space-y-2 justify-start mb-4 md:mb-0"> 
             <p className="text-gray-500 font-semibold">Why Koala?</p>
             <h1 className="text-2xl md:text-4xl font-bold">We're in the business of making Furniture.</h1> 
@@ -408,10 +408,19 @@ const WhyKoala = () => {
 
         {/* Carousel Images and Content */}
         <div>
-          <div className="flex gap-4 md:gap-8 w-full cursor-pointer mt-6 md:mt-10 pb-4 overflow-x-auto">
+          <div className="flex gap-4 md:gap-8 w-full cursor-pointer mt-6 md:mt-10 pb-4 overflow-x-auto" style={{ "scrollbarWidth" : "none"}}>
             {currentLink && 
-              (window.innerWidth < 768 
-                ? currentLink.images.map((image, index) => (
+              (window.innerWidth < 768 ? (
+                  <div className="flex overflow-x-auto gap-4"
+                      style={{ scrollbarWidth: "none" }}
+                      onScroll={(e) => {
+                       const scrollLeft = e.target.scrollLeft;
+                       const width = e.target.offsetWidth;
+                      const index = Math.round(scrollLeft / width);
+                      setCurrentIndex(index);
+                      }}
+                  >
+                  { currentLink.images.map((image, index) => ( 
                     <div key={index} className="flex-shrink-0 w-full space-y-4">
                       <div>
                         <img 
@@ -425,8 +434,9 @@ const WhyKoala = () => {
                         <p className="text-gray-900 w-full">{currentLink.description[index]}</p>
                       </div>
                     </div>
-                  ))
-                : currentLink.images.slice(currentIndex, currentIndex + 4).map((image, index) => (
+                  ))}
+                </div>
+                ) : currentLink.images.slice(currentIndex, currentIndex + 4).map((image, index) => (
                     <div key={index} className="w-1/4 space-y-4">
                       <div>
                         <img 
@@ -443,6 +453,7 @@ const WhyKoala = () => {
                   ))
               )
             }
+            
           </div>
 
           {/* Progress Bar */}
@@ -452,6 +463,7 @@ const WhyKoala = () => {
               style={{ width: `${progress}%` }}
             ></div>
           </div>
+
         </div>
       </div>     
    

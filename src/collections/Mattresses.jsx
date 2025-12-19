@@ -102,7 +102,8 @@ useEffect(() => {
       </div>
 
      <div className="cursor-pointer">
-      <div className="flex gap-2 md:gap-4 mb-6 md:mb-8 justify-center items-center overflow-x-auto md:overflow-x-visible">
+      <div className="flex gap-2 md:gap-4 mb-6 md:mb-8 md:justify-center items-center overflow-x-auto md:overflow-x-visible" 
+           style={{ "scrollbarWidth" : "none"}}>
         {links.map((link) => (
           <button
             key={link.id}

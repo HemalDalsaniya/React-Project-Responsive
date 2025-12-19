@@ -86,17 +86,15 @@ const AboutUs = () => {
                 {/* Navigation Arrows */}
                 {aboutUs.length > 1 && (
                     <>
-                        <button 
-                            onClick={prevSlide}
-                            className="absolute left-2 bottom-2 bg-[#586A4D] bg-opacity-50 text-white py-1 px-3 text-2xl rounded-full ml-2"
-                        >
-                            &lt;
+                        <button onClick={prevSlide}
+                          className="absolute left-2 bottom-2 bg-[#586A4D] bg-opacity-50 w-10 h-10 rounded-full flex items-center justify-center ml-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" 
+                               strokeLinejoin="round" className="w-6 h-6"><polyline points="15 18 9 12 15 6" /></svg>
                         </button>
-                        <button 
-                            onClick={nextSlide}
-                            className="absolute right-2 bottom-2 bg-[#586A4D] bg-opacity-50 text-white py-1 px-3 text-2xl rounded-full mr-2"
-                        >
-                            &gt;
+                        <button onClick={nextSlide}
+                           className="absolute right-2 bottom-2 bg-[#586A4D] bg-opacity-50 w-10 h-10 rounded-full flex items-center justify-center mr-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"
+                                strokeLinejoin="round" className="w-6 h-6"><polyline points="9 18 15 12 9 6" /></svg> 
                         </button>
                     </>
                 )}

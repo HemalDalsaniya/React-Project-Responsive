@@ -20,6 +20,7 @@ const Head = () => {
                     "/images/sofas/sofa6.png","/images/sofas/sofa7.png","/images/sofas/sofa8.png"], 
       title:["Sofas", "Sofa Beds", "Modular Sofas", "Chaise Sofas","Corner Sofas","Armchairs","Ottomans",
                     "Sofa Modules","Sofa Covers"],
+      route:["sofas","sofabeds","sofas","sofas","sofas","sofas","sofas","sofas","sofas"]
     }
   ];
   
@@ -30,6 +31,7 @@ const Head = () => {
                     "/images/bedroom/bedroom10.png","/images/bedroom/bedroom11.png"],
     title:["Mattresses", "Bed Bases", "Bundles","Pillow","Kids","Bedside Tables","Chest of Drawers","Bed Covers & Sheets",
           "Rugs","Mattress Protector","Duvets"],
+    route:["mattresses","bedroom","bedroom","bedroom","bedroom","bedroom","bedroom","bedroom","bedroom","bedroom","bedroom"]
     } 
   ];
   
@@ -55,12 +57,13 @@ const Head = () => {
               <div className="flex items-center w-96 justify-start cursor-pointer">
                 <li className="relative z-40">
                   <div id="logo">
-                    <img href="/"
+                    <a href="/">
+                    <img 
                       src={Logo}  
                       alt="Logo" 
                       width="auto"
                       height="auto" 
-                    />
+                    /> </a>
                   </div>
                 </li>
               </div>
@@ -100,7 +103,7 @@ const Head = () => {
                       </Link>
 
                       <div
-                        className={`fixed inset-x-0 top-24.5 transform transition-all duration-300 ease-in-out bg-white shadow-lg ${
+                        className={`fixed inset-x-0 top-21.5 transform transition-all duration-300 ease-in-out bg-white shadow-lg ${
                           isSofasHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
                         }`}
                       >
@@ -119,7 +122,7 @@ const Head = () => {
                             <div className="grid grid-cols-7 justify-start gap-x-4 gap-y-8">
                               {sofas[0].images.map((image, index) => (
                                 <div key={index}>
-                                  <Link to="/collections/sofas">
+                                  <Link  to={`/collections/${sofas[0].route[index]}`}>    {/*to="/collections/sofas">*/}
                                     <img
                                       key={index}
                                       src={image}
@@ -152,7 +155,7 @@ const Head = () => {
                       </Link> 
                       
                       <div
-                        className={`fixed top-24.5 inset-x-0 transform transition-all duration-300 ease-in-out bg-white shadow-lg ${
+                        className={`fixed top-21.5 inset-x-0 transform transition-all duration-300 ease-in-out bg-white shadow-lg ${
                           isBedroomHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
                         }`}>
                         {isBedroomHovered && (
@@ -165,7 +168,7 @@ const Head = () => {
                             <div className="grid grid-cols-7 justify-start gap-x-4 gap-y-8">
                               {bedroom[0].images.map((image, index) => (
                                 <div key={index}>
-                                  <Link to="/collections/bedroom">
+                                  <Link  to={`/collections/${bedroom[0].route[index]}`}>  {/*to="/collections/bedroom">*/}
                                     <img
                                       key={index}
                                       src={image}

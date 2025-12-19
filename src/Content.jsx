@@ -32,7 +32,10 @@ const Content = () => {
         <div className="text-overlay absolute top-0 left-0 right-0 bottom-0 flex items-center px-4 md:px-10 lg:px-40">
           <div className="py-4 md:py-10 lg:py-16 ">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white">
-              The cool change has arrived
+              The cool change has
+            </h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white">
+              arrived
             </h1>
             <div className="text-lg sm:text-xl md:text-2xl font-bold py-3 md:py-6 text-white">
               <p>Koala Polar + Mattress. Keep your cool all year long.</p>

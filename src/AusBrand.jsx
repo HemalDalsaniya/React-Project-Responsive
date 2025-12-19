@@ -39,7 +39,7 @@ const AusBrand = () => {
       </div>
 
       {/* Navigation Buttons - Scrollable on mobile */}
-      <div className="cursor-pointer overflow-x-auto whitespace-nowrap pb-2 md:pb-0 md:whitespace-normal">
+      <div className="cursor-pointer overflow-x-auto whitespace-nowrap pb-2 md:pb-0 md:whitespace-normal" style={{ "scrollbarWidth" : "none"}}>
         <div className="inline-flex space-x-2 md:space-x-4 mb-4 md:mb-8">
           {links.map((link) => (
             <button

@@ -1594,6 +1594,16 @@
       "image": "/images/sofas/sofa21.png",
       "review": "4.7",
       "quantities": 1
+    },
+    {
+      "id": "6",
+      "title": "Balmain Bed Base",
+      "size": "Queen",
+      "price": "750",
+      "color": "Timber",
+      "image": "/images/bedroom/bedroom29.png",
+      "review": "4.8",
+      "quantities": 1
     }
   ],
   "quizresponses": [

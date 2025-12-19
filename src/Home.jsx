@@ -15,7 +15,7 @@ import Reviews from './Reviews'
 const Home = () => {
 
   return (
-    <div className="scroll-smooth max-w-screen overflow-x-hidden"> 
+    <div className="scroll-smooth"> 
        <Header/>
        <Head/>    
        <Content />  
