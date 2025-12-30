@@ -307,6 +307,7 @@ const MattressQuiz = () => {
   
       alert("Thank you! Your responses have been saved and emailed.");
       setEmail("");
+      setCurrentSlide(0);
     } catch (error) {
       console.error("Error:", error);
       alert(`Something went wrong: ${error.message}`);
