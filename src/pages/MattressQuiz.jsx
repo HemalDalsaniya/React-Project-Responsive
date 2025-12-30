@@ -291,7 +291,7 @@ const MattressQuiz = () => {
       // Send email using EmailJS
       const templateParams = {
         email: email,
-        answers: answers.join('• '), // Convert answers array to a string
+        answers: answers.join('  •  '), // Convert answers array to a string
       };
   
       const emailResponse = await emailjs.send(
